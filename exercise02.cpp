@@ -41,9 +41,11 @@ void bfs(WaterBottle s, int x, int y, int z){
         next_state.push_back({0, u.y, u.path});
         next_state.push_back({u.x, 0, u.path});
         for (auto v: next_state){
-            if (visited[{v.x, v.y}]) continue;
-            v.path.push_back({u.x, u.y});
-            q.push(v);
+            if (!visited[{v.x, v.y}]) {
+                visited[{v.x, v.y}] = 1;
+                v.path.push_back({u.x, u.y});
+                q.push(v);
+            }
         }
     }
 }
