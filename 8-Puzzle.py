@@ -77,7 +77,6 @@ def game_loop(screen, WIDTH, HEIGHT, n):
             for x in range(n):
                 value = tiles[y][x]
                 if value != 0:
-                    
                     pygame.draw.rect(screen, WHITE, (x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE))
                     pygame.draw.rect(screen, BLACK, (x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE), 2)
                     text = FONT.render(str(value), True, BLACK)
